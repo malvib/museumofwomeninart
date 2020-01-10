@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Arts</h1>
+
+
+    <% @arts.each do |art| %>
+        <h1><%= art.title %></h1>
+
+        <img src="<%= art.photo %>">
+      </tr>
+    <% end %>
+
+
+<%= link_to 'New Art', new_art_path %>

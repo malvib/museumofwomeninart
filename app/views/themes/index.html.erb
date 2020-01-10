@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<div class="topnav">
+  <a class="left">Musée des Femmes dans l'Art</a>
+  <a href="<%= new_theme_path %>" class="right">Ajouter un thème</a>
+  <a href="" class="right">Accueil</a>
+</div>
+
+<div class="separator"></div>
+
+<!--accueil début-->
+<div class="grid-container">
+  <% @themes.each do |theme| %>
+    <div class="grid-item" style="background-image: url('<%= theme.photo %>');"><button id="myBtn<%= theme.numero %>"><%= theme.title %></button></div>
+  <% end %>
+</div>
+<!--accueil fin-->
+
+<% @themes.each do |theme| %>
+<!--début-->
+<div id="myModal<%= theme.numero %>" class="modal">
+<div class="modal-content">
+  <div class="modal-header">
+    <span class="close<%= theme.numero %> close">&times;</span>
+    <h2><%= theme.title %></h2>
+  </div>
+  <div class="modal-body">
+    
+  </div>
+</div>
+</div>
+<!--fin-->
+<% end %>
+
+<script type="text/javascript">
+
+<% @themes.each do |theme| %>
+//début
+var modal<%= theme.numero %> = document.getElementById("myModal<%= theme.numero %>");
+var btn<%= theme.numero %> = document.getElementById("myBtn<%= theme.numero %>");
+var span<%= theme.numero %> = document.getElementsByClassName("close<%= theme.numero %>")[0];
+btn<%= theme.numero %>.onclick = function() {
+  modal<%= theme.numero %>.style.display = "block";
+}
+span<%= theme.numero %>.onclick = function() {
+  modal<%= theme.numero %>.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal<%= theme.numero %>.style.display = "none";
+  }
+}
+//fin
+<% end %>
+
+</script>

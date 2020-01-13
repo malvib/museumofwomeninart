@@ -1,12 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Arts</h1>
+
+<div class="topnav">
+  <a class="left">Musée des Femmes dans l'Art</a>
+  <a href="<%= new_art_path %>" class="right">Ajouter une oeuvre</a>
+</div>
+
+<div class="separator"></div>
+
+<div class="introduction">
+<a>Le musée de la Femme dans l’Art vous présente sa collection. Nous avons regroupé quelques une de nos oeuvres préférées dans cette sélection non exhaustive. Nous vous proposons donc de célébrer la femme à travers l'Art</a>
+<br><a>Nous vous souhaitons une bonne découverte et espérons que cette présentation vous inspire...
+</a></div>
 
 
     <% @arts.each do |art| %>
-    
-        <h2><%= art.title %></h2>
+        <br>
         <img class="art" src="<%= art.photo %>">
+
+        <h2><%= art.title %></h2>
         <a><%= art.author %></a>
         <br>
         <a><%= art.technic %></a>
@@ -18,6 +30,16 @@
         <a><%= art.place %></a>
         <br>
         <a><%= art.description %></a>
+        <br>
+        <br>
+
+        <div class="button-container">
+            <%= link_to 'Show', art %>
+            <%= link_to 'Edit', edit_art_path(art) %>
+            <%= link_to 'Destroy', art, method: :delete, data: { confirm: 'are you sure?'} %>  
+           
+        </div>
+
 
      <% end %>  
 

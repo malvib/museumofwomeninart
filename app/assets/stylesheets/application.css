@@ -51,7 +51,7 @@ html, body {
 .introduction{
   position: center;
   font-size: 40px;
-  color: #297CA0;
+  color: #46185f;
   margin: 10%; 
 
 }
@@ -63,8 +63,15 @@ html, body {
 }
 
 img.art {
-  width: 400px;
+  height: 450px;
   margin: 0 auto;
   float: right;
   margin: 2%;
+}
+
+.button-container {
+  color: #297CA0;
+  font-size: 25px;
+  float: right;
+  margin: 0,5%;
 }

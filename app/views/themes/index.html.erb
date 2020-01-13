@@ -3,54 +3,26 @@
 <div class="topnav">
   <a class="left">Musée des Femmes dans l'Art</a>
   <a href="<%= new_theme_path %>" class="right">Ajouter un thème</a>
-  <a href="" class="right">Accueil</a>
 </div>
 
 <div class="separator"></div>
 
-<!--accueil début-->
-<div class="grid-container">
-  <% @themes.each do |theme| %>
-    <div class="grid-item" style="background-image: url('<%= theme.photo %>');"><button id="myBtn<%= theme.numero %>"><%= theme.title %></button></div>
-  <% end %>
-</div>
-<!--accueil fin-->
+<div class="introduction">
+<a>Le musée de la Femme dans l’art vous présente sa collection d’oeuvres. Nous avons regroupé quelques une de nos oeuvres préférées dans cette sélection non exhaustive. Nous vous proposons donc de célébrer la femme à travers différents thèmes, les femmes et l’amour, les femmes dans le tourment,...</a>
+<a>Nous vous souhaitons une bonne découverte et espérons que cette présentation vous inspire...
+</a></div>
 
 <% @themes.each do |theme| %>
 <!--début-->
 <div id="myModal<%= theme.numero %>" class="modal">
-<div class="modal-content">
-  <div class="modal-header">
-    <span class="close<%= theme.numero %> close">&times;</span>
-    <h2><%= theme.title %></h2>
+    <h1><%= theme.title %></h1>
   </div>
+
   <div class="modal-body">
     
-  </div>
-</div>
+ 
 </div>
 <!--fin-->
 <% end %>
 
-<script type="text/javascript">
 
-<% @themes.each do |theme| %>
-//début
-var modal<%= theme.numero %> = document.getElementById("myModal<%= theme.numero %>");
-var btn<%= theme.numero %> = document.getElementById("myBtn<%= theme.numero %>");
-var span<%= theme.numero %> = document.getElementsByClassName("close<%= theme.numero %>")[0];
-btn<%= theme.numero %>.onclick = function() {
-  modal<%= theme.numero %>.style.display = "block";
-}
-span<%= theme.numero %>.onclick = function() {
-  modal<%= theme.numero %>.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal<%= theme.numero %>.style.display = "none";
-  }
-}
-//fin
-<% end %>
-
-</script>

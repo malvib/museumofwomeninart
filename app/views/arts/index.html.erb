@@ -4,11 +4,22 @@
 
 
     <% @arts.each do |art| %>
-        <h1><%= art.title %></h1>
+    
+        <h2><%= art.title %></h2>
+        <img class="art" src="<%= art.photo %>">
+        <a><%= art.author %></a>
+        <br>
+        <a><%= art.technic %></a>
+        <br>
+        <a><%= art.date %></a>
+        <br>
+        <a><%= art.size %></a>
+        <br>
+        <a><%= art.place %></a>
+        <br>
+        <a><%= art.description %></a>
 
-        <img src="<%= art.photo %>">
-      </tr>
-    <% end %>
+     <% end %>  
 
 
 <%= link_to 'New Art', new_art_path %>

@@ -1,3 +1,3 @@
 class Theme < ApplicationRecord
-has_many :arts
+	has_many :arts
 end

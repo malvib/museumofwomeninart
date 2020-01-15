@@ -79,5 +79,10 @@ img.art {
 
 .titre {
   color: #5d1451;
+  font-size: 35px;
+}
+.theme {
+  color: #42b883;
+  margin: 5%; 
   font-size: 40px;
 }

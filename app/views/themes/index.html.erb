@@ -1,3 +1,56 @@
 
+			
 
-   
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="topnav">
+  <a class="left">Musée des Femmes dans l'Art</a>
+  <a href="<%= new_art_path %>" class="right">Ajouter une oeuvre</a>
+  <a href="<%= new_theme_path %>" class="right">Ajouter un thème</a>
+</div>
+
+<div class="separator"></div>
+
+<div class="introduction">
+<a>Le musée de la Femme dans l’Art vous présente sa collection. Nous avons regroupé quelques une de nos oeuvres préférées dans cette sélection non exhaustive. Nous vous proposons donc de célébrer la femme à travers l'Art</a>
+<br><a>Nous vous souhaitons une bonne découverte et espérons que cette présentation vous inspire...
+</a></div>
+
+
+
+<% @themes.each do |theme| %>
+	<div class="theme"><h1><%= theme.title %></h1></div>
+
+	<% theme.arts.each do |art| %>
+	
+        <br>
+        <img class="art" src="<%= art.photo %>">
+
+        <div class="titre"><h2><%= art.title %></h2></div>
+        <div class="tablette"><a><%= art.author %></a>
+        <br>
+        <a><%= art.technic %></a>
+        <br>
+        <a><%= art.date %></a>
+        <br>
+        <a><%= art.size %></a>
+        <br>
+        <a><%= art.place %></a> </div>
+        <br>
+        <a><%= art.description %></a>
+        <br>
+        <br>
+
+        <div class="button-container">
+            <%= link_to 'Show', art %>
+            <%= link_to 'Edit', edit_art_path(art) %>
+            <%= link_to 'Destroy', art, method: :delete, data: { confirm: 'are you sure?'} %>  
+           
+        </div>
+
+
+	<% end %>
+
+<% end %>

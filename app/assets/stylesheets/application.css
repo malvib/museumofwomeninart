@@ -1,7 +1,7 @@
 /* Add a black background color to the top navigation */
 
 html, body {
-  font-family: 'Saira Extra Condensed', sans-serif !important;
+  font-family: 'Gelasio', serif !important;
   font-size: 30px;
   margin: 2%;
   color: #14868c;
@@ -74,6 +74,7 @@ img.art {
   font-size: 25px;
   float: right;
   margin: 0,5%;
+  font-family: 'Lato', sans-serif !important;
 }
 
 .titre {
